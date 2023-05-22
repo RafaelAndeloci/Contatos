@@ -1,0 +1,44 @@
+﻿@model ContatosQueEuOdeio.Models.Contato;
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<h1>Contato (@Model.Id)</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Perfil)</th>
+            <th>@Html.DisplayNameFor(model => model.Tipo)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+            <tr>
+                <td>@Html.DisplayFor(modelItem => Model.Id)</td>
+                <td>@Html.DisplayFor(modelItem => Model.Perfil)</td>
+                <td>@Html.DisplayFor(modelItem => Model.Tipo)</td>
+            </tr>
+        
+    </tbody>
+</table>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <form asp-action="ConfirmarRemocao" asp-route-idCliente="@Model.IdCliente" asp-route-idContato="@Model.Id">
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <input type="hidden" asp-for="Perfil" class="form-control" />
+                    <input type="hidden" asp-for="Tipo" class="form-control" />
+                    <input type="submit" value="Confirmar Remoção" class="btn btn-primary btn-danger" />
+                </form>
+
+                <form asp-action="Index" asp-route-idCliente="@Model.IdCliente">
+                    <input type="submit" value="Cancelar" class="btn btn-primary" />
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>

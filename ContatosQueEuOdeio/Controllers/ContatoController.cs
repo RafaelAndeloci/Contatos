@@ -1,0 +1,119 @@
+﻿using ContatosQueEuOdeio.Models;
+using ContatosQueEuOdeio.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
+
+namespace ContatosQueEuOdeio.Controllers
+{
+    /// <summary>
+    /// Controller responsável por gerenciar os contatos.
+    /// </summary>
+    public class ContatoController : Controller
+    {
+        /// <summary>
+        /// Contexto de Contato.
+        /// </summary>
+        private IContatoService _service;
+        /// <summary>
+        /// Contexto de Cliente.
+        /// </summary>
+        private IClienteService _clienteService;
+
+        /// <summary>
+        /// Injeção de dependencia para os serviços utilizados
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="clienteService"></param>
+        public ContatoController(IContatoService service, IClienteService clienteService)
+        {
+            _service = service;
+            _clienteService = clienteService;
+        }
+
+        /// <summary>
+        /// Action Index que leva à pagina principal de contatos
+        /// </summary>
+        /// <param name="idCliente">Parâmetro referente ao Cliente, para poder acessar a página Index de Contatos de um cliente específico</param>
+        /// <returns>Retorna a View Index dos Contatos do Cliente</returns>
+        public IActionResult Index(int idCliente)
+        {
+            Cliente? cliente = _clienteService.Find(idCliente);
+
+            return View((idCliente, cliente.Contatos));
+        }
+
+
+        /// <summary>
+        /// Action Criar que será responsável por exibir a view de criação de contatos 
+        /// </summary>
+        /// <returns>Retorna a View para criar um novo contato</returns>
+        public IActionResult Criar(int idCliente)
+        {
+            ViewBag.IdCliente = idCliente;
+            
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Adicionar(Contato contato)
+        {
+            ViewBag.IdCliente = contato.IdCliente;
+
+            if (Char.IsDigit(contato.Perfil[0]))
+            {
+                ModelState.AddModelError("Pefil", "Perfil não pode iniciar com digitos!");
+                return RedirectToAction("Index", new { contato.IdCliente });
+            }
+
+
+            _service.Create(contato, contato.IdCliente);
+            return RedirectToAction("Index", new { contato.IdCliente } );
+        }
+
+
+        /// <summary>
+        /// Action Editar que será responsável por editar um determinado contato.
+        /// </summary>
+        /// <param name="idCliente">irá especificar o contato a ser editado</param>
+        /// <returns>retornará para a pagina Index de Contatos</returns>
+        public IActionResult Editar(int idContato)
+        {
+            Contato? contato = _service.Find(idContato);
+            return View(contato);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Atualizar(Contato contato)
+        {
+            ViewBag.IdCliente = contato.IdCliente;
+            if (contato.Id > 0)
+                _service.Update(contato);
+            return RedirectToAction("Index", new { contato.IdCliente });
+        }
+
+        /// <summary>
+        /// Action para levar à pagina de remoção
+        /// </summary>
+        /// <param name="idCliente">irá especificar o contato a ser removido</param>
+        /// <returns>retornará para a pagina Index de Contatos</returns>
+        public IActionResult Remover(int idContato)
+        {
+            var contato = _service.Find(idContato);
+            return View(contato);
+        }
+
+        /// <summary>
+        /// Action HTTPPost para remover o contato de um determinado cliente.
+        /// </summary>
+        /// <param name="contato">o contato a ser deletado</param>
+        /// <returns>Retornará para a view Index dos contatos do cliente</returns>
+        public IActionResult ConfirmarRemocao(int idContato, int idCliente)
+        {
+            Contato? contato = _service.Find(idContato);
+            _service.Delete(contato);
+            return RedirectToAction("Index", new { contato.IdCliente });
+        }
+    }
+}

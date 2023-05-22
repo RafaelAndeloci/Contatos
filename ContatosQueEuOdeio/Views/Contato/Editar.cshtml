@@ -1,0 +1,37 @@
+﻿@model ContatosQueEuOdeio.Models.Contato
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<h1>Contato (@Model.Perfil)</h1><h2>Tipo: (@Model.Tipo)</h2>
+
+<h4>Alterar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Atualizar" asp-route-idCliente="@Model.IdCliente">
+            <input hidden value="@Model.IdCliente" asp-for="IdCliente" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Perfil" class="control-label"></label>
+                <input asp-for="Perfil" class="form-control" />
+                <span asp-validation-for="Perfil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <input asp-for="Tipo" class="form-control" />
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <input type="submit" value="Atualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-danger" asp-action="Index" asp-route-idCliente="@Model.IdCliente">Voltar</a>
+</div>

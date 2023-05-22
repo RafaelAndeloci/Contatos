@@ -1,0 +1,32 @@
+﻿@model ContatosQueEuOdeio.Models.Cliente;
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<h1>Cliente (@Model.Id)</h1>
+
+<p>
+    @Model.Nome<br />
+    @Model.Endereco<br />
+</p>
+
+@if (Model.Contatos.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contatos.First().Perfil)</th>
+                <th>@Html.DisplayNameFor(model => model.Contatos.First().Tipo)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Contatos)
+            {
+                <tr>
+                    <th>@Html.DisplayFor(modelItem => item.Perfil)</th>
+                    <th>@Html.DisplayFor(modelItem => item.Tipo)</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

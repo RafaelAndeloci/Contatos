@@ -1,0 +1,36 @@
+﻿@model (int idCliente, ICollection<ContatosQueEuOdeio.Models.Contato> contato)
+@{
+    int idCliente = Model.idCliente; 
+}
+
+<h1>@Html.ViewData["Title"]</h1>
+
+
+<p>
+    <a class="btn btn-primary" asp-action="Criar" asp-route-idCliente="@idCliente">Novo Contato</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Perfil</th>
+            <th>Tipo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.contato)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Perfil)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                <td>
+                    <a class="btn btn-secondary" asp-action="Editar" asp-route-idCliente="@idCliente" asp-route-idContato="@item.Id">Editar</a>
+                    <a class="btn btn-danger" asp-action="Remover" asp-route-idCliente="@idCliente" asp-route-idContato="@item.Id">Remover</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
