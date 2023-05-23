@@ -9,69 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ContatosQueEuOdeio
 build_property.RootNamespace = ContatosQueEuOdeio
-build_property.ProjectDir = c:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\
+build_property.ProjectDir = C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio
+build_property.MSBuildProjectDirectory = C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Criar.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Detalhar.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhbGhhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Index.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Remover.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Cliente/Remover.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxSZW1vdmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Criar.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Editar.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Index.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Remover.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Contato/Remover.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xSZW1vdmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Home/Index.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Home/Privacy.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Shared/Error.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/_ViewImports.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/_ViewStart.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Shared/_Layout.cshtml]
+[C:/Users/rafael.goncalves/source/repos/Contatos/ContatosQueEuOdeio/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-g9uw8eygei
