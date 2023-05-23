@@ -26,9 +26,9 @@ namespace ContatosQueEuOdeio.Services
             _context.SaveChanges();
         }
 
-        public Cliente? Find(int id)
+        public Cliente? Find(Cliente cliente)
         {
-            return _context.Clientes.Include(p => p.Contatos).FirstOrDefault(x => x.Id == id);
+            return _context.Clientes.Include("Contatos").First(x => x.Id == cliente.Id);
         }
 
         public ICollection<Cliente> FindAll()

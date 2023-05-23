@@ -14,20 +14,16 @@ namespace ContatosQueEuOdeio.Controllers
         /// Contexto de Contato.
         /// </summary>
         private IContatoService _service;
-        /// <summary>
-        /// Contexto de Cliente.
-        /// </summary>
-        private IClienteService _clienteService;
+
 
         /// <summary>
         /// Injeção de dependencia para os serviços utilizados
         /// </summary>
         /// <param name="service"></param>
         /// <param name="clienteService"></param>
-        public ContatoController(IContatoService service, IClienteService clienteService)
+        public ContatoController(IContatoService service)
         {
             _service = service;
-            _clienteService = clienteService;
         }
 
         /// <summary>
@@ -37,9 +33,9 @@ namespace ContatosQueEuOdeio.Controllers
         /// <returns>Retorna a View Index dos Contatos do Cliente</returns>
         public IActionResult Index(int idCliente)
         {
-            Cliente? cliente = _clienteService.Find(idCliente);
+            var contatos = _service.FindFromCliente(new Cliente { Id = idCliente });
 
-            return View((idCliente, cliente.Contatos));
+            return View((idCliente, contatos));
         }
 
 
@@ -67,7 +63,7 @@ namespace ContatosQueEuOdeio.Controllers
             }
 
 
-            _service.Create(contato, contato.IdCliente);
+            _service.Create(contato);
             return RedirectToAction("Index", new { contato.IdCliente } );
         }
 
@@ -77,9 +73,9 @@ namespace ContatosQueEuOdeio.Controllers
         /// </summary>
         /// <param name="idCliente">irá especificar o contato a ser editado</param>
         /// <returns>retornará para a pagina Index de Contatos</returns>
-        public IActionResult Editar(int idContato)
+        public IActionResult Editar(int idContato, int idCliente)
         {
-            Contato? contato = _service.Find(idContato);
+            var contato = _service.Find(new Contato { Id = idContato , IdCliente = idCliente});
             return View(contato);
         }
 
@@ -98,10 +94,10 @@ namespace ContatosQueEuOdeio.Controllers
         /// </summary>
         /// <param name="idCliente">irá especificar o contato a ser removido</param>
         /// <returns>retornará para a pagina Index de Contatos</returns>
-        public IActionResult Remover(int idContato)
+        public IActionResult Remover(int idContato, int idCliente)
         {
-            var contato = _service.Find(idContato);
-            return View(contato);
+            var ct = _service.Find(new Contato { Id = idContato, IdCliente = idCliente});
+            return View(ct);
         }
 
         /// <summary>
@@ -109,10 +105,10 @@ namespace ContatosQueEuOdeio.Controllers
         /// </summary>
         /// <param name="contato">o contato a ser deletado</param>
         /// <returns>Retornará para a view Index dos contatos do cliente</returns>
-        public IActionResult ConfirmarRemocao(int idContato, int idCliente)
+        public IActionResult ConfirmarRemocao(Contato contato)
         {
-            Contato? contato = _service.Find(idContato);
-            _service.Delete(contato);
+            Contato? ct = _service.Find(contato);
+            _service.Delete(ct);
             return RedirectToAction("Index", new { contato.IdCliente });
         }
     }

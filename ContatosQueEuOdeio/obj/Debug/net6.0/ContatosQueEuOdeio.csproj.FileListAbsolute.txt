@@ -85,3 +85,4 @@ C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\bin\Debug\net
 C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\bin\Debug\net6.0\ContatosQueEuOdeio.pdb
 C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\obj\Debug\net6.0\ContatosQueEuOdeio.genruntimeconfig.cache
 C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\obj\Debug\net6.0\ref\ContatosQueEuOdeio.dll
+C:\Users\rafael.goncalves\source\repos\Contatos\ContatosQueEuOdeio\bin\Debug\net6.0\libman.json

@@ -1,4 +1,5 @@
 ﻿using ContatosQueEuOdeio.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContatosQueEuOdeio.Services
 {
@@ -11,25 +12,36 @@ namespace ContatosQueEuOdeio.Services
             _context = context;
         }
 
-        public void Create(Contato contato, int idCliente)
+        public void Create(Contato entity)
         {
-            _context.Clientes
-                .Find(idCliente)
+            _context.Contatos.Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Contato entity)
+        {
+            _context.Contatos.Remove(entity);
+            _context.SaveChanges();
+        }
+
+        public Contato? Find(Contato entity)
+        {
+            return _context.Contatos.FirstOrDefault(
+                ct => ct.Id == entity.Id && ct.IdCliente == entity.IdCliente);
+        }
+
+        public ICollection<Contato> FindAll()
+        {
+            return _context.Contatos.ToList();
+        }
+
+        public ICollection<Contato> FindFromCliente(Cliente cliente)
+        {
+            return _context
                 .Contatos
-                .Add(contato);
-                
-            _context.SaveChanges();
-        }
-
-        public void Delete(Contato contato)
-        {
-            _context.Contatos.Remove(contato);
-            _context.SaveChanges();
-        }
-
-        public Contato? Find(int id)
-        {
-            return _context.Contatos.FirstOrDefault(x => x.Id == id);
+                .Include("IdClienteNavigation")
+                .Where(ct => ct.IdCliente == cliente.Id)
+                .ToList();
         }
 
         public void Update(Contato contato)

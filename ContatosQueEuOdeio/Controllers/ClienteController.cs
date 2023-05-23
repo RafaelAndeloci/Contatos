@@ -21,14 +21,16 @@ namespace ContatosQueEuOdeio.Controllers
 
         public IActionResult Detalhar(int idCliente)
         {
-            Cliente? cli = _service.Find(idCliente);
+
+            Cliente? cli = _service.Find(new Cliente { Id = idCliente});
             return View(cli);
         }
 
         [HttpGet]
         public IActionResult Editar(int idCliente)
         {
-            Cliente cliente = _service.Find(idCliente)!;
+
+            Cliente cliente = _service.Find(new Cliente { Id = idCliente})!;
             return View("Criar", cliente);
         }
 
@@ -64,7 +66,7 @@ namespace ContatosQueEuOdeio.Controllers
 
         public IActionResult Remover(int idCliente)
         {
-            Cliente? cli = _service.Find(idCliente);
+            Cliente? cli = _service.Find(new Cliente { Id = idCliente });
             return View(cli);
         }
 

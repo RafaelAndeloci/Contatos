@@ -2,11 +2,8 @@
 
 namespace ContatosQueEuOdeio.Services
 {
-    public interface IContatoService
+    public interface IContatoService : IService<Contato>
     {
-        public void Create(Contato contato, int idCliente);
-        public void Update(Contato contato);
-        public void Delete(Contato contato);
-        public Contato? Find(int id);
+        public ICollection<Contato> FindFromCliente(Cliente cliente);
     }
 }

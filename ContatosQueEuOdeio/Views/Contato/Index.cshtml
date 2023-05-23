@@ -27,8 +27,8 @@
                 <td>@Html.DisplayFor(modelItem => item.Perfil)</td>
                 <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
                 <td>
-                    <a class="btn btn-secondary" asp-action="Editar" asp-route-idCliente="@idCliente" asp-route-idContato="@item.Id">Editar</a>
-                    <a class="btn btn-danger" asp-action="Remover" asp-route-idCliente="@idCliente" asp-route-idContato="@item.Id">Remover</a>
+                    <a class="btn btn-secondary" asp-action="Editar" asp-route-idContato="@item.Id" asp-route-idCliente="@idCliente">Editar</a>
+                    <a class="btn btn-danger" asp-action="Remover" asp-route-idContato="@item.Id" asp-route-idCliente="@idCliente">Remover</a>
                 </td>
             </tr>
         }
