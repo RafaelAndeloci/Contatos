@@ -105,11 +105,12 @@ namespace ContatosQueEuOdeio.Controllers
         /// </summary>
         /// <param name="contato">o contato a ser deletado</param>
         /// <returns>Retornará para a view Index dos contatos do cliente</returns>
-        public IActionResult ConfirmarRemocao(Contato contato)
+        [HttpPost]
+        public IActionResult ConfirmarRemocao(int idContato, int idCliente)
         {
-            Contato? ct = _service.Find(contato);
-            _service.Delete(ct);
-            return RedirectToAction("Index", new { contato.IdCliente });
+            var contato = _service.Find(new Contato { Id = idContato, IdCliente = idCliente })!;
+            _service.Delete(contato);
+            return Json(new { success = true });
         }
     }
 }
