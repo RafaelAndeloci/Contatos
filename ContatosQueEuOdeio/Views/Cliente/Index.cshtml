@@ -27,7 +27,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Endereco)</td>
                 <td>
                     <a class="btn btn-secondary" asp-action="Editar" asp-route-idCliente="@item.Id">Editar</a> 
-                    <a class="btn btn-info" asp-action="Detalhar" asp-route-idCliente="@item.Id">Detalhar</a> 
+                    <a class="btn btn-secondary" asp-action="Detalhar" asp-route-idCliente="@item.Id">Detalhar</a> 
                     <a class="btn btn-danger" asp-action="Remover" asp-route-idCliente="@item.Id">Remover</a> 
                     <a class="btn btn-primary" asp-controller="Contato" asp-action="Index" asp-route-idCliente="@item.Id">Contato</a>
                 </td>

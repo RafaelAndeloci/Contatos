@@ -1,6 +1,7 @@
 ﻿using ContatosQueEuOdeio.Models;
 using ContatosQueEuOdeio.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Reflection;
 
 namespace ContatosQueEuOdeio.Controllers
@@ -15,6 +16,13 @@ namespace ContatosQueEuOdeio.Controllers
         /// </summary>
         private IContatoService _service;
 
+        private List<SelectListItem> _redesSociais = new()
+        {
+            new SelectListItem() { Value = "Instagram", Text = "Instagram" },
+            new SelectListItem() { Value = "TikTok", Text = "TikTok" },
+            new SelectListItem() { Value = "Twitter", Text = "Twitter"},
+            new SelectListItem() { Value = "Email", Text= "Email"}
+        };
 
         /// <summary>
         /// Injeção de dependencia para os serviços utilizados
@@ -46,6 +54,7 @@ namespace ContatosQueEuOdeio.Controllers
         public IActionResult Criar(int idCliente)
         {
             ViewBag.IdCliente = idCliente;
+            ViewBag.RedesSociais = _redesSociais;
             
             return View();
         }
